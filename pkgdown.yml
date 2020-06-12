@@ -1,15 +1,15 @@
-pandoc: '2.2'
-pkgdown: 1.4.1
-pkgdown_sha: ~
+pandoc: 2.7.3
+pkgdown: 1.5.1.9000
+pkgdown_sha: e3235d58b2c539f6aa34a0be88363c6998c9d5ca
 articles:
   adding-tidiers: adding-tidiers.html
   available-methods: available-methods.html
   bootstrapping: bootstrapping.html
   broom: broom.html
   broom_and_dplyr: broom_and_dplyr.html
-  external-tidiers: external-tidiers.html
   kmeans: kmeans.html
+last_built: 2020-06-12T17:23Z
 urls:
-  reference: http://broom.tidyverse.org/reference
-  article: http://broom.tidyverse.org/articles
+  reference: https://broom.tidymodels.org/reference
+  article: https://broom.tidymodels.org/articles
 

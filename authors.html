@@ -17,32 +17,40 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png" />
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 <!-- Bootstrap -->
 <link href="tidyverse.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script>
 <link href="tidyverse-2.css" rel="stylesheet">
 
+<!--optional theme-->
+<link href=".css" rel="stylesheet">
+
+
 
 
 <meta property="og:title" content="Authors" />
-<meta property="og:image" content="http://broom.tidyverse.org/logo.png" />
+<meta property="og:image" content="https://broom.tidymodels.org/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -57,11 +65,19 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-115082821-1');
+</script>
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-authors">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -76,9 +92,9 @@
 
       <div class="navbar-brand-container">
         <a class="navbar-brand" href="index.html">broom</a>
-        <div class="info">
-          <span class="partof">part of the <a href="https://tidyverse.org">tidyverse</a></span>
-          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2.9002</span>
+        <div class="info hidden-xs hidden-sm">
+          <span class="partof">part of <a href="https://tidymodels.org">tidymodels</a></span>
+          <span class="version version-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.0.9000</span>
         </div>
       </div>
     </div>
@@ -98,22 +114,19 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="articles/adding-tidiers.html">Adding new tidiers</a>
+      <a href="https://www.tidymodels.org/learn/develop/broom/">Adding new tidiers</a>
     </li>
     <li>
       <a href="articles/available-methods.html">Available methods</a>
     </li>
     <li>
-      <a href="articles/bootstrapping.html">Bootstrapping</a>
+      <a href="https://www.tidymodels.org/learn/statistics/bootstrap/">Bootstrapping</a>
     </li>
     <li>
       <a href="articles/broom_and_dplyr.html">Broom and dplyr</a>
     </li>
     <li>
-      <a href="articles/external-tidiers.html">Tidiers in external packages</a>
-    </li>
-    <li>
-      <a href="articles/kmeans.html">K-means</a>
+      <a href="https://www.tidymodels.org/learn/statistics/k-means/">K-means</a>
     </li>
   </ul>
 </li>
@@ -148,11 +161,11 @@
         </p>
       </li>
       <li>
-        <p><strong>Alex Hayes</strong>. Author, maintainer. <a href='https://orcid.org/0000-0002-4985-5160' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Alex Hayes</strong>. Author, maintainer. <a href='https://orcid.org/0000-0002-4985-5160' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
-        <p><strong>Indrajeet Patil</strong>. Contributor. <a href='https://orcid.org/0000-0003-1995-6531' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Indrajeet Patil</strong>. Contributor. <a href='https://orcid.org/0000-0003-1995-6531' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
@@ -256,6 +269,10 @@
         </p>
       </li>
       <li>
+        <p><strong>Yves Rosseel</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
         <p><strong>Michael Kuehn</strong>. Contributor. 
         </p>
       </li>
@@ -268,7 +285,7 @@
         </p>
       </li>
       <li>
-        <p><strong>Karl Dunkle Werner</strong>. Contributor. 
+        <p><strong>Karl Dunkle Werner</strong>. Contributor. <a href='https://orcid.org/0000-0003-0523-7309' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
@@ -308,7 +325,7 @@
         </p>
       </li>
       <li>
-        <p><strong>Bill Denney</strong>. Contributor. <a href='https://orcid.org/0000-0002-5759-428X' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Bill Denney</strong>. Contributor. <a href='https://orcid.org/0000-0002-5759-428X' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
@@ -320,7 +337,7 @@
         </p>
       </li>
       <li>
-        <p><strong>Vincent Arel-Bundock</strong>. Contributor. <a href='https://orcid.org/0000-0003-2042-7063' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Vincent Arel-Bundock</strong>. Contributor. <a href='https://orcid.org/0000-0003-2042-7063' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
@@ -344,15 +361,15 @@
         </p>
       </li>
       <li>
-        <p><strong>Abby Smith</strong>. Contributor. <a href='https://orcid.org/0000-0002-3207-0375' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Abby Smith</strong>. Contributor. <a href='https://orcid.org/0000-0002-3207-0375' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
-        <p><strong>Jasper Cooper</strong>. Contributor. <a href='https://orcid.org/0000-0002-8639-3188' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Jasper Cooper</strong>. Contributor. <a href='https://orcid.org/0000-0002-8639-3188' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
-        <p><strong>E Auden Krauska</strong>. Contributor. <a href='https://orcid.org/0000-0002-1466-5850' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>E Auden Krauska</strong>. Contributor. <a href='https://orcid.org/0000-0002-1466-5850' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
@@ -360,11 +377,11 @@
         </p>
       </li>
       <li>
-        <p><strong>Malcolm Barrett</strong>. Contributor. <a href='https://orcid.org/0000-0003-0299-5825' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Malcolm Barrett</strong>. Contributor. <a href='https://orcid.org/0000-0003-0299-5825' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
-        <p><strong>Charles Gray</strong>. Contributor. <a href='https://orcid.org/0000-0002-9978-011X' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Charles Gray</strong>. Contributor. <a href='https://orcid.org/0000-0002-9978-011X' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
@@ -372,7 +389,7 @@
         </p>
       </li>
       <li>
-        <p><strong>Vilmantas Gegzna</strong>. Contributor. <a href='https://orcid.org/0000-0002-9500-5167' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Vilmantas Gegzna</strong>. Contributor. <a href='https://orcid.org/0000-0002-9500-5167' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
@@ -380,7 +397,7 @@
         </p>
       </li>
       <li>
-        <p><strong>Frederik Aust</strong>. Contributor. <a href='https://orcid.org/0000-0003-4900-788X' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Frederik Aust</strong>. Contributor. <a href='https://orcid.org/0000-0003-4900-788X' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
@@ -392,19 +409,223 @@
         </p>
       </li>
       <li>
-        <p><strong>Marius Barth</strong>. Contributor. <a href='https://orcid.org/0000-0002-3421-6665' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Marius Barth</strong>. Contributor. <a href='https://orcid.org/0000-0002-3421-6665' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
-        <p><strong>Bruna Wundervald</strong>. Contributor. <a href='https://orcid.org/0000-0001-8163-220X' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Bruna Wundervald</strong>. Contributor. <a href='https://orcid.org/0000-0001-8163-220X' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
-        <p><strong>Joyce Cahoon</strong>. Contributor. <a href='https://orcid.org/0000-0001-7217-4702' target='orcid.widget'><img src='https://members.orcid.org/sites/default/files/vector_iD_icon.svg' class='orcid' alt='ORCID'></a>
+        <p><strong>Joyce Cahoon</strong>. Contributor. <a href='https://orcid.org/0000-0001-7217-4702' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
+        </p>
+      </li>
+      <li>
+        <p><strong>Grant McDermott</strong>. Contributor. <a href='https://orcid.org/0000-0001-7883-8573' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
         </p>
       </li>
       <li>
         <p><strong>Kevin Zarca</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Shiro Kuriwaki</strong>. Contributor. <a href='https://orcid.org/0000-0002-5687-2647' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
+        </p>
+      </li>
+      <li>
+        <p><strong>Lukas Wallrich</strong>. Contributor. <a href='https://orcid.org/0000-0003-2121-5177' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
+        </p>
+      </li>
+      <li>
+        <p><strong>James Martherus</strong>. Contributor. <a href='https://orcid.org/0000-0002-8285-3300' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
+        </p>
+      </li>
+      <li>
+        <p><strong>Chuliang Xiao</strong>. Contributor. <a href='https://orcid.org/0000-0002-8466-9398' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
+        </p>
+      </li>
+      <li>
+        <p><strong>Joseph Larmarange</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Max Kuhn</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Michal Bojanowski</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Hakon Malmedal</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Clara Wang</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Sergio Oller</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Luke Sonnet</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Jim Hester</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Cory Brunson</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Ben Schneider</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Bernie Gray</strong>. Contributor. <a href='https://orcid.org/0000-0001-9190-6032' target='orcid.widget' aria-label='ORCID'><span class='fab fa-orcid orcid' aria-hidden='true'></span></a>
+        </p>
+      </li>
+      <li>
+        <p><strong>Mara Averick</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Aaron Jacobs</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Andreas Bender</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Sven Templer</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Paul-Christian Buerkner</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Matthew Kay</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Erwan Le Pennec</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Johan Junkka</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Hao Zhu</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Benjamin Soltoff</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Zoe Wilkinson Saldana</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Tyler Littlefield</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Charles T. Gray</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Shabbh E. Banks</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Serina Robinson</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Roger Bivand</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Riinu Ots</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Nicholas Williams</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Nina Jakobsen</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Michael Weylandt</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Lisa Lendway</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Karl Hailperin</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Josue Rodriguez</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Jenny Bryan</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Chris Jarvis</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Greg Macfarlane</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Brian Mannakee</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Drew Tyre</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Shreyas Singh</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Laurens Geffert</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Hong Ooi</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Henrik Bengtsson</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Eduard Szocs</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>David Hugh-Jones</strong>. Contributor. 
+        </p>
+      </li>
+      <li>
+        <p><strong>Matthieu Stigler</strong>. Contributor. 
         </p>
       </li>
     </ul>
@@ -417,7 +638,7 @@
 
       <footer>
       <div class="tidyverse">
-  <p>broom is a part of the <strong>tidyverse</strong>, an ecosystem of packages designed with common APIs and a shared philosophy. Learn more at <a href="https://tidyverse.org">tidyverse.org</a>.</p>
+  <p>broom is a part of the <strong>tidymodels</strong> ecosystem, a collection of modeling packages designed with common APIs and a shared philosophy.</p>
 </div>
 
 <div class="author">

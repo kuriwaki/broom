@@ -173,7 +173,7 @@ specify which components to return.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for dist</span>
-<span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='no'>x</span>, <span class='kw'>diagonal</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span>(<span class='no'>x</span>, <span class='st'>"Diag"</span>), <span class='no'>...</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='kw'>x</span>, diagonal = <span class='fu'><a href='https://rdrr.io/r/base/attr.html'>attr</a></span>(<span class='kw'>x</span>, <span class='st'>"Diag"</span>), <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -223,12 +223,14 @@ the tidied version will not either.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>iris_dist</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/dist.html'>dist</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span>(<span class='no'>iris</span>[, <span class='fl'>1</span>:<span class='fl'>4</span>]))
-<span class='no'>iris_dist</span></div><div class='output co'>#&gt;              Sepal.Length Sepal.Width Petal.Length
+<span class='kw'>iris_dist</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/dist.html'>dist</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span>(<span class='kw'>iris</span>[, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>4</span>]))
+<span class='kw'>iris_dist</span>
+</div><div class='output co'>#&gt;              Sepal.Length Sepal.Width Petal.Length
 #&gt; Sepal.Width      36.15785                         
 #&gt; Petal.Length     28.96619    25.77809             
 #&gt; Petal.Width      57.18304    25.86407     33.86473</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='no'>iris_dist</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 12 x 3</span><span>
+<span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='kw'>iris_dist</span>)
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 12 x 3</span><span>
 #&gt;    item1        item2        distance
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'> 1</span><span> Sepal.Length Sepal.Width      36.2
@@ -242,7 +244,8 @@ the tidied version will not either.</p>
 #&gt; </span><span style='color: #555555;'> 9</span><span> Petal.Length Petal.Width      33.9
 #&gt; </span><span style='color: #555555;'>10</span><span> Petal.Width  Sepal.Length     57.2
 #&gt; </span><span style='color: #555555;'>11</span><span> Petal.Width  Sepal.Width      25.9
-#&gt; </span><span style='color: #555555;'>12</span><span> Petal.Width  Petal.Length     33.9</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='no'>iris_dist</span>, <span class='kw'>upper</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 12 x 3</span><span>
+#&gt; </span><span style='color: #555555;'>12</span><span> Petal.Width  Petal.Length     33.9</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='kw'>iris_dist</span>, upper = <span class='fl'>TRUE</span>)
+</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 12 x 3</span><span>
 #&gt;    item1        item2        distance
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'> 1</span><span> Sepal.Length Sepal.Width      36.2
@@ -256,7 +259,8 @@ the tidied version will not either.</p>
 #&gt; </span><span style='color: #555555;'> 9</span><span> Petal.Length Petal.Width      33.9
 #&gt; </span><span style='color: #555555;'>10</span><span> Petal.Width  Sepal.Length     57.2
 #&gt; </span><span style='color: #555555;'>11</span><span> Petal.Width  Sepal.Width      25.9
-#&gt; </span><span style='color: #555555;'>12</span><span> Petal.Width  Petal.Length     33.9</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='no'>iris_dist</span>, <span class='kw'>diagonal</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 16 x 3</span><span>
+#&gt; </span><span style='color: #555555;'>12</span><span> Petal.Width  Petal.Length     33.9</div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='kw'>iris_dist</span>, diagonal = <span class='fl'>TRUE</span>)
+</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 16 x 3</span><span>
 #&gt;    item1        item2        distance
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'> 1</span><span> Sepal.Length Sepal.Length      0  

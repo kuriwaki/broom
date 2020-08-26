@@ -225,7 +225,7 @@ missing at this time.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for kmeans</span>
-<span class='fu'><a href='https://rdrr.io/pkg/generics/man/augment.html'>augment</a></span>(<span class='no'>x</span>, <span class='no'>data</span>, <span class='no'>...</span>)</pre>
+<span class='fu'><a href='https://rdrr.io/pkg/generics/man/augment.html'>augment</a></span>(<span class='kw'>x</span>, <span class='kw'>data</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -273,13 +273,18 @@ the <code>data</code> argument.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>cluster</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>dplyr</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://svn.r-project.org/R-packages/trunk/cluster'>cluster</a></span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://dplyr.tidyverse.org'>dplyr</a></span>)
 
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>iris</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span>(-<span class='no'>Species</span>)</div><div class='output co'>#&gt; <span class='error'>Error in select(., -Species): unused argument (-Species)</span></div><div class='input'>
-<span class='no'>fit</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/cluster/man/pam.html'>pam</a></span>(<span class='no'>x</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>)</div><div class='output co'>#&gt; <span class='error'>Error in inherits(x, "dist"): object 'x' not found</span></div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='no'>fit</span>)</div><div class='output co'>#&gt; <span class='error'>Error in tidy(fit): object 'fit' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/generics/man/glance.html'>glance</a></span>(<span class='no'>fit</span>)</div><div class='output co'>#&gt; <span class='error'>Error in glance(fit): object 'fit' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/generics/man/augment.html'>augment</a></span>(<span class='no'>fit</span>, <span class='no'>x</span>)</div><div class='output co'>#&gt; <span class='error'>Error in augment(fit, x): object 'fit' not found</span></div></pre>
+<span class='kw'>x</span> <span class='op'>&lt;-</span> <span class='kw'>iris</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span>(<span class='op'>-</span><span class='kw'>Species</span>)
+</div><div class='output co'>#&gt; <span class='error'>Error in select(., -Species): unused argument (-Species)</span></div><div class='input'>
+<span class='kw'>fit</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/cluster/man/pam.html'>pam</a></span>(<span class='kw'>x</span>, k = <span class='fl'>3</span>)
+</div><div class='output co'>#&gt; <span class='error'>Error in inherits(x, "dist"): object 'x' not found</span></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/pkg/generics/man/tidy.html'>tidy</a></span>(<span class='kw'>fit</span>)
+</div><div class='output co'>#&gt; <span class='error'>Error in tidy(fit): object 'fit' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/generics/man/glance.html'>glance</a></span>(<span class='kw'>fit</span>)
+</div><div class='output co'>#&gt; <span class='error'>Error in glance(fit): object 'fit' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/generics/man/augment.html'>augment</a></span>(<span class='kw'>fit</span>, <span class='kw'>x</span>)
+</div><div class='output co'>#&gt; <span class='error'>Error in augment(fit, x): object 'fit' not found</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
